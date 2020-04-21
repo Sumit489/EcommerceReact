@@ -1,21 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import { graphql, StaticQuery } from 'gatsby'
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import HeroSection from "../components/Reusable/HeroSection"
+import InfoBlock from "../components/Reusable/infoblock"
+import DualInfoblock from "../components/Reusable/DualInfoblock"
 
-const IndexPage = () => (
+
+const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <HeroSection 
+    img={data.img.childImageSharp.fluid}
+    title="I write code"
+    subtitle="Learn code online"
+    heroclass="hero-background"
+    />
+    <InfoBlock 
+    heading="About US"/>
+    <DualInfoblock heading="my team" imgsrc="https://images.pexels.com/photos/4029925/pexels-photo-4029925.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
   </Layout>
 )
+
+export const query = graphql`
+{
+  img: file(relativePath: {eq: "heromain.png"}) {
+    childImageSharp {
+      fluid {
+        ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
