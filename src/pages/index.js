@@ -31,7 +31,7 @@ export const query = graphql`
   img: file(relativePath: {eq: "heromain.png"}) {
     childImageSharp {
       fluid {
-        ...GatsbyImageSharpFluid_tracedSVG
+        src
       }
     }
   }
@@ -48,7 +48,7 @@ export const query = graphql`
         }
         image{
           fixed(width:200,height:120){
-            ...GatsbyContentfulFixed_tracedSVG
+            src
           }
         }
       }
