@@ -22,7 +22,7 @@ export default class Coursecart extends Component {
                             this.state.mycourses.map(({node})=>{
                                  return(
                                      <div 
-                                     key={node.id} className="col-11 col-md-6 d-flex my-3 mx-auto">
+                                     key={node.id} className="col-11 col-md-6 d-flex mx-auto">
                                         <Img fixed={node.image.fixed}/>
                                         <div className="flex-grow-1 px-3">
                                             <div className="d-flex justify-content-between">
@@ -35,7 +35,7 @@ export default class Coursecart extends Component {
                                           <button 
                                           data-item-id={node.id}
                                           data-item-price={node.price}
-                                          data-item-url="https://learncodeonline.in"
+                                          data-item-url="https://vigilant-dijkstra-65039f.netlify.app/"
                                           data-item-image={node.image.fixed.src}
                                           data-item-name={node.title}
                                           className="btn btn-warning snipcart-add-item">Join Now</button>
