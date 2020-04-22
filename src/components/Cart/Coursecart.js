@@ -35,8 +35,8 @@ export default class Coursecart extends Component {
                                           <button 
                                           data-item-id={node.id}
                                           data-item-price={node.price}
-                                          data-item-url="https://reactecommercelco.netlify.app/"
-                                          data-item-image={node.image.fixed.src} 
+                                          data-item-url="https://learncodeonline.in"
+                                          data-item-image={node.image.fixed.src}
                                           data-item-name={node.title}
                                           className="btn btn-warning snipcart-add-item">Join Now</button>
                                           </div>      
