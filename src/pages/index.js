@@ -48,7 +48,7 @@ export const query = graphql`
         }
         image{
           fixed(width:200,height:120){
-            ...GatsbyContentfulFixed_tracedSVG
+            ...GatsbyContentfulFixed
           }
         }
       }
