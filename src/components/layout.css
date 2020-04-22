@@ -14,6 +14,15 @@
   flex-direction: column;
 }
 
+.about-background{
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 .btn-warning{
   padding: 8px 25px;
 }
