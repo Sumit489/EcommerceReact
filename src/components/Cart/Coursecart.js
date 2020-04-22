@@ -36,7 +36,7 @@ export default class Coursecart extends Component {
                                           data-item-id={node.id}
                                           data-item-price={node.price}
                                           data-item-url="https://vigilant-dijkstra-65039f.netlify.app/"
-                                          data-item-image={node.image.fixed.src}
+                                          data-item-image={<Img fixed={node.image.fixed}/>}
                                           data-item-name={node.title}
                                           className="btn btn-warning snipcart-add-item">Join Now</button>
                                           </div>      
