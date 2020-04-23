@@ -5,56 +5,39 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSection from "../components/Reusable/HeroSection"
 import InfoBlock from "../components/Reusable/infoblock"
-import DualInfoblock from "../components/Reusable/DualInfoblock"
-import Coursecart from "../components/Cart/Coursecart"
+import Contact from "../components/Contact/contact"
 
 
-const IndexPage = ({data}) => (
+ 
+const ContactPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     <HeroSection 
     img={data.img.childImageSharp.fluid}
-    title="I write code"
-    subtitle="Learn code online"
-    heroclass="hero-background"
+    title="Contact learn code online"
+    subtitle=""
+    heroclass="about-background"
     />
+    
     <InfoBlock 
-    heading="About US"/>
+    heading="How Can we Help"/>
 
-    <Coursecart courses={data.courses} />
-    <DualInfoblock heading="my team" imgsrc="https://images.pexels.com/photos/4029925/pexels-photo-4029925.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+    <Contact />
+    
+    
   </Layout>
 )
 
 export const query = graphql`
 {
-  img: file(relativePath: {eq: "heromain.png"}) {
+  img: file(relativePath: {eq: "contact.png"}) {
     childImageSharp {
       fluid {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
   }
-  courses:allContentfulCourses{
-    edges {
-      node {
-        id
-        title
-        price
-        category
-        description {
-          id
-          description
-        }
-        image{
-          fixed(width:200,height:120){
-            ...GatsbyContentfulFixed_tracedSVG
-          }
-        }
-      }
-    }
-  }
 }
 `
 
-export default IndexPage
+export default ContactPage
